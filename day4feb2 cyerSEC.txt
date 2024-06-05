@@ -299,12 +299,28 @@ cm is a ssh,cucm/sccp,web
 cm2 is secureWEB, 23, dns
 create a fwpolicy2 Policy to meet his condition.
 
+config t
+NO IP access-list Extended fwpolicy2
+IP access-list Extended fwpolicy2
+ permit Tcp Any host cm Eq 22
+ permit Tcp Any host cm Eq 443
+permit Tcp Any host cm Eq 80
+
+ permit Tcp Any host cm2 Eq 23
+permit Tcp Any host cm2 Eq 53
+ permit Tcp Any host cm2 Eq 443
+
+ do sh ip access-list fwpolicy2
+ Int Fa 0/0
+  ip access-group fwpolicy2 IN
+  end
+
 nmap -v cm       nmap -v cm2
 22               443
-2000             23
+443            23
 80               53
 
-ex.2: Make a Firewall so that we can meet this fwpolicy3:
+ex.3: Make a Firewall so that we can meet this fwpolicy3:
 cm is a ping,cucm/sccp,
 cm2 is  ssh,web,dns,finger
 create a fwpolicy3 Policy to meet his condition.
