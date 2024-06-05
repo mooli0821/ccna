@@ -1,0 +1,19 @@
+ip routing
+router eigrp 42
+no auto-summary 
+network 10.42.42.0 0.0.0.255
+end
+
+config t
+router ospf 1
+router-id 42.0.0.1
+network 200.0.0.0 0.0.0.255 area 0
+network 42.0.0.1 0.0.0.255 area 0 
+end
+
+conf t
+router ospf 1
+redistribute eigrp 42 subnets
+router eigrp 42
+redistribute ospf 1 metric 1000000 1 255 1 1500
+end
