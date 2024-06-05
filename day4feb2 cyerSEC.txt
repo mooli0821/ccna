@@ -193,7 +193,7 @@ before: nmap -v 10.m.100.8
 @Cucm:
 config t
 int fa 0/0
- ip add 10.m.100.9 255.255.255.0 Secondary
+ ip add 10.42.100.9 255.255.255.0 Secondary
 service finger
 service tcp-small-servers
 service udp-small-servers
@@ -201,13 +201,13 @@ ip dns server
 ip http server
 ip http secure-server
 !Make Ping EASY
-ip host pc 10.m.1.10
-ip host cm 10.m.100.8
-ip host cm2 10.m.100.9
-ip host p1 10.m.100.101
-ip host p2 10.m.100.102
-ip host sw 10.m.1.4
-ip host ed 10.m.m.1
+ip host pc 10.42.1.10
+ip host cm 10.42.100.8
+ip host cm2 10.42.100.9
+ip host p1 10.42.100.101
+ip host p2 10.42.100.102
+ip host sw 10.42.1.4
+ip host ed 10.42.42.1
 
 TASK7: Enter the World of BlueTeam: Protect vs Redteam: Attack, 
 BlueTeam: UTM: unified Threat management:
@@ -220,6 +220,42 @@ Top 5 UTM: 1.FortinetFortigate:
            1.1: Palo Alto:superSuplado
            2. Checkpoint
            3.4 Cisco
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 TASK8: CONGigure YOur first Packet Filter Firewall.
  FORMULA: "  Protocol    hacker   victim  Port "
