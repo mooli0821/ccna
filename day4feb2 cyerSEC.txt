@@ -21,6 +21,77 @@ net  use  s: \\10.k.1.10\c$  /user:administrator
 
 net  use  s: \\10.k.1.10\c$
 
+
+
+task 1
+block pornsites
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+config t
+no ip access-list standard NOPORN1
+ip access-list standard NOPORN1
+deny 66.254.0.0 0.0.255.255
+deny 104.21.0.0 0.0.255.255
+deny 68.235.0.0 0.0.255.255
+deny 104.17.0.0 0.0.255.255
+deny 88.208.0.0 0.0.255.255
+permit any
+int gi 0/0/1
+ip access-group NOPORN1 in
+end
+
+Task 2: blck standard access list to block classmate and other country
+
+config t
+no ip access-list standard NOCOL1
+ip access-list standard NOCOL1
+deny 10.11.0.0 0.0.255.255
+deny 10.21.0.0 0.0.255.255
+deny 10.31.0.0 0.0.255.255
+deny 10.41.0.0 0.0.255.255
+deny 10.51.0.0 0.0.255.255
+deny 10.61.0.0 0.0.255.255
+permit any
+int gi 0/0/1
+ip access-group NOCOL1 in
+end
+
+task 3
+
+config t
+no ip access-list standard NOCOL1
+ip access-list standard NOCOL1
+deny 10.11.0.0 0.0.255.255
+deny 10.12.0.0 0.0.255.255
+deny 10.21.0.0 0.0.255.255
+deny 10.22.0.0 0.0.255.255
+deny 10.51.0.0 0.0.255.255
+deny 10.52.0.0 0.0.255.255
+deny 10.61.0.0 0.0.255.255
+deny 10.62.0.0 0.0.255.255
+permit any
+int gi 0/0/1
+ip access-group NOCOL1 in
+end
+
+
+
+
 TASK3: When you become a Security Analyst:
 Learn to Block the IPaddress from 3 "BAD" countries:
 NorthKorea, RUSSIA, China.= where all the Best hackers live.
