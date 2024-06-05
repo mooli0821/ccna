@@ -1,0 +1,12 @@
+@cm:
+config t
+router eigrp M
+  no auto-summary
+  network 10.m.100.0 0.0.0.255
+@corebaba:
+config t
+router eigtp M
+  no auto-summary
+  network 10.m.100.0 0.0.0.255
+  network 10.m.50.0 0.0.0.255
+  network 10.m.50.0 0.0.0.255
