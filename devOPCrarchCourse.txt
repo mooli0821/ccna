@@ -154,20 +154,20 @@ headers:
 	Content-Type: application/yang-data+json
 
 GET:
-https://192.168.152.128/restconf/data/ietf-interfaces:interfaces
-https://192.168.152.128/restconf/data/Cisco-IOS-XE-native:native
-https://192.168.152.128/restconf/data/Cisco-IOS-XE-native:native?depth=1
-https://192.168.152.128/restconf/data/Cisco-IOS-XE-native:native?depth=2
+https://192.168.102.7/restconf/data/ietf-interfaces:interfaces
+https://192.168.102.7/restconf/data/Cisco-IOS-XE-native:native
+https://192.168.102.7/restconf/data/Cisco-IOS-XE-native:native?depth=1
+https://192.168.102.7/restconf/data/Cisco-IOS-XE-native:native?depth=2
 
 GET the hostname and version:
-https://192.168.152.128/restconf/data/Cisco-IOS-XE-native:native/version
-https://192.168.152.128/restconf/data/Cisco-IOS-XE-native:native/hostname
+https://192.168.102.7/restconf/data/Cisco-IOS-XE-native:native/version
+https://192.168.102.7/restconf/data/Cisco-IOS-XE-native:native/hostname
 
-https://192.168.152.128/restconf/data/Cisco-IOS-XE-native:native/interface/Loopback=0
+https://192.168.102.7/restconf/data/Cisco-IOS-XE-native:native/interface/Loopback=0
 
 GET
-https://192.168.152.128/restconf/data/Cisco-IOS-XE-native:native/license
-https://192.168.152.128/restconf/data/Cisco-IOS-XE-native:native/license/udi
+https://192.168.102.7/restconf/data/Cisco-IOS-XE-native:native/license
+https://192.168.102.7/restconf/data/Cisco-IOS-XE-native:native/license/udi
 
 GET all the interfaces: show ip int brief:
 
